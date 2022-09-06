@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('feature_flag_permissions', static function (Blueprint $table): void {
-            $table->uuid('id')->primary();
+            $table->increaments();
             $table->unsignedBigInteger('feature_flag_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

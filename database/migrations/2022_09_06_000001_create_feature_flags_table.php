@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('feature_flags', static function (Blueprint $table): void {
-            $table->uuid('id')->primary();
+            $table->increaments();
             $table->string('feature_name', 50);
             $table->dateTime('revokes_at')->nullale();
             $table->timestamps();
