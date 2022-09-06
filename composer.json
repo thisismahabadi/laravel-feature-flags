@@ -20,6 +20,5 @@
                 "Thisismahabadi\\FeatureFlags\\FeatureFlagServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
