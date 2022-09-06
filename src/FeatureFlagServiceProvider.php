@@ -6,6 +6,7 @@ namespace Thisismahabadi\FeatureFlags;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Thisismahabadi\FeatureFlags\Http\Middleware\CheckFeatureFlagAccess;
 
 final class FeatureFlagServiceProvider extends ServiceProvider
 {
