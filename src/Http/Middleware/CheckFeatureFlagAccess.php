@@ -16,16 +16,18 @@ final class CheckFeatureFlagAccess
         $validFeature = DB::table('feature_flags')
             ->where('feature_name', $featureName)
             ->where('revokes_at', '>=', Carbon::now())
+            ->select('id')
             ->first();
 
-        if ($validFeature->exists()) {
+        if (!$validFeature) {
             app()->abort(403);
         }
 
         $isUserAccessibleToFeature = DB::table('feature_flag_permissions')
             ->where('feature_flag_id', $validFeature->id)
             ->where('user_id', $request->user()->id)
-            ->exists();
+            ->select('id')
+            ->first();
 
         if (!$isUserAccessibleToFeature) {
             app()->abort(403);
