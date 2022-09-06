@@ -1,5 +1,5 @@
 ## Installation
 
 ```bash
-composer require thisismahabadi/laravel-feature/flags
+composer require thisismahabadi/laravel-feature-flags
 ```
