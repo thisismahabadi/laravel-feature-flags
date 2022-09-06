@@ -1,0 +1,24 @@
+{
+    "name": "thisismahabadi/laravel-feature-flags",
+    "description": "This package helps you implement feature flags in your Laravel application without a 3rd party service.",
+    "keywords": ["laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Mahabadi",
+            "email": "itismahabadi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Thisismahabadi\\FeatureFlags\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thisismahabadi\\FeatureFlags\\FeatureFlagServiceProvider"
+            ]
+        }
+    }
+}
