@@ -22,4 +22,12 @@ After having the information in the database, all we need to do is to assign mid
 
 `Route::middleware('feature_flag:whatsapp')->post('api/v1/whatsapp', WhatsAppController@sendMessage);`
 
-The feature flag middleware firstly checks the **feature_flags** table if that feature is valid and if so, it'll then check **feature_flag_permissions** table to see if the user which is requesting has a correlated record in the database. 
+The feature flag middleware firstly checks the **feature_flags** table if that feature is valid and if so, it'll then check **feature_flag_permissions** table to see if the user which is requesting has a correlated record in the database.
+
+## Configuration
+
+If you execute Laravel's `vendor:publish` command, your file will be copied to the specified publish location and then the configurations can be customized.
+
+```bash
+php artisan vendor:publish --tag=feature-flags-config
+```

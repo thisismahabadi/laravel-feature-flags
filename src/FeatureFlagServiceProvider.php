@@ -21,5 +21,14 @@ final class FeatureFlagServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         }
+
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
+
+        $this->publishes(
+            [
+                __DIR__ . '/../config/feature_flags.php' => config_path('feature_flags.php'),
+            ],
+            'feature-flags-config',
+        );
     }
 }
