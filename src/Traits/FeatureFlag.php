@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Thisismahabadi\FeatureFlags\Traits;
+
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
