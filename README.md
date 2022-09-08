@@ -34,16 +34,11 @@ php artisan vendor:publish --tag=feature-flags-config
 
 ## Code requirements
 
-If you want to use the User's id to check the permission all you need to do is to define a **belongsTo** relation in your **User** model as `featureAccessor()`.  
+This part is **only** being used if you want the **Middleware** of this package.
 
-```bash
-public function featureAccessor(): BelongsTo
-{
-    return $this->belongsTo(self::class, 'id', 'id');
-}
-```
+By default, this package is using `featureAccessor()` **belongsTo** relation in the User's model as an accessor resource, and if that relation can not be found it will use the user_id who requests an endpoint.
 
-Did you know you can also use another resource that you use in your company? Such as `team_id`, `agency_id`, `customer_id` or whatever you use.  
+But, Did you know you can also use another resource that you use in your company? Such as `team_id`, `agency_id`, `customer_id` or whatever you use.  
 
 Example for using `agency_id`:
 
