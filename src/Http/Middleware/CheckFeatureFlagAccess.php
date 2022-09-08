@@ -19,7 +19,7 @@ final class CheckFeatureFlagAccess
             abort(401);
         }
 
-        $accessorId = $request->user()?->featureAccessor?->id ?? $request->user()?->id;
+        $accessorId = $request->user()->featureAccessor?->id ?? $request->user()->id;
         $canAccessFeature = $this->hasAccessToFeature($accessorId, $featureName);
 
         if ($canAccessFeature === false) {
