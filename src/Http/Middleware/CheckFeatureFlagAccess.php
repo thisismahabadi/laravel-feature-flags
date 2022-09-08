@@ -17,9 +17,9 @@ final class CheckFeatureFlagAccess
 
     public function handle(Request $request, Closure $next, string $featureName)
     {
-        $isUserAllowedToAccessFeature = $this->hasAccessToFeature($request->user()->id, $featureName);
+        $canAccessFeature = $this->hasAccessToFeature($request->user()->featureAccessor->id, $featureName);
 
-        if ($isUserAllowedToAccessFeature === false) {
+        if ($canAccessFeature === false) {
             app()->abort(403);
         }
 

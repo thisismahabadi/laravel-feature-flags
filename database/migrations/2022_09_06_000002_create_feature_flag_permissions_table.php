@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('feature_flag_permissions', static function (Blueprint $table): void {
             $table->id();
             $table->unsignedBigInteger('feature_flag_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('accessor_id');
+            $table->string('accessor_type', 50);
             $table->timestamps();
 
-            $table->index(['feature_flag_id', 'user_id']);
+            $table->index(['feature_flag_id', 'accessor_id']);
         });
     }
 
