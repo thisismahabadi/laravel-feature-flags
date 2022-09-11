@@ -25,10 +25,6 @@ trait FeatureFlag
             Cache::put("feature-$featureName-$accessorId", $canAccessFeature, config('feature_flags.cache_ttl'));
         }
 
-        if ($canAccessFeature === false) {
-            return false;
-        }
-
-        return true;
+        return $canAccessFeature;
     }
 }
