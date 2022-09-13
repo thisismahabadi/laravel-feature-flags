@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('feature_flags', static function (Blueprint $table): void {
             $table->id();
             $table->string('feature_name', 50);
-            $table->dateTime('revokes_at')->nullale();
+            $table->dateTime('revokes_at')->nullable();
             $table->timestamps();
 
             $table->index(['feature_name', 'revokes_at']);
